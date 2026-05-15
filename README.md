@@ -1,131 +1,171 @@
 # Grameen-Light
 
-<<<<<<< HEAD
-Grameen-Light (Energy) is an Android app for village streetlight issue reporting and repair tracking. Residents can report pole issues quickly, while Panchayat users can assign and close repairs through a PIN-protected workflow.
+Grameen-Light is an Android-based smart streetlight monitoring and complaint management system developed for rural communities. The application helps villagers easily report streetlight problems such as fused lights, damaged poles, or streetlights remaining ON during daytime. It also enables Panchayat authorities to monitor complaints, assign repairs, and track maintenance activities efficiently.
 
-## Features
+The project aims to reduce electricity wastage, improve road safety, and simplify communication between villagers and local authorities through a digital platform.
 
-- Pole map with 25 seeded streetlight poles
-- Quick report flow for `Working`, `Fused`, and `Burning in Day`
-- Complaint ID generation in `GL-YYYYMMDD-NNN` format
-- Repair tracker with status filters and update history
-- Panchayat mode with 4-digit PIN protection
-- Energy-saved summary for resolved daytime-burning issues
-- Day audit / night audit theme switching
-- Offline-first Room storage with Firebase-ready sync
-- Fallback Panchayat summary when AI/cloud is unavailable
+---
 
-## Tech Stack
+# Problem Statement
+
+In many rural areas, streetlight maintenance is handled manually, which often leads to delayed repairs and poor monitoring. Villagers usually need to report issues physically to local authorities, making the process slow and inefficient.
+
+Common issues include:
+- Streetlights remaining fused for long periods
+- Lights staying ON during daytime causing energy wastage
+- Lack of proper complaint tracking
+- Delayed repair management
+- Poor visibility and road safety during nighttime
+
+These problems highlight the need for a simple, technology-based reporting and monitoring solution.
+
+---
+
+# Key Features
+
+## 1. Streetlight Pole Mapping
+- Displays streetlight poles on Google Maps
+- Includes 25 pre-seeded pole locations
+- Easy pole identification and selection
+
+## 2. Quick Complaint Reporting
+Users can report issues such as:
+- Working
+- Fused
+- Burning During Daytime
+
+Each complaint is recorded instantly through a simplified reporting flow.
+
+## 3. Complaint ID Generation
+- Automatically generates complaint IDs in the format:
+  `GL-YYYYMMDD-NNN`
+- Helps in complaint tracking and management
+
+## 4. Repair Tracking System
+- Track complaint status updates
+- View maintenance history
+- Filter complaints based on repair status
+
+## 5. Panchayat Management Mode
+- Secure 4-digit PIN-protected access
+- Enables authorities to assign and close repair tasks
+- Improves maintenance workflow management
+
+## 6. Energy Saving Summary
+- Displays estimated energy savings from resolved daytime-burning issues
+- Encourages efficient electricity usage
+
+## 7. Day and Night Audit Themes
+- Supports separate themes for day audits and night audits
+- Enhances monitoring visibility based on inspection conditions
+
+## 8. Offline-First Functionality
+- Reports are stored locally using Room Database
+- Data syncs with Firebase when internet becomes available
+
+## 9. Fallback Panchayat Summary
+- Local summaries remain available even when cloud services or AI features are unavailable
+
+---
+
+# Technologies Used
 
 - Kotlin
+- Android Studio
 - Jetpack Compose
-- MVVM
+- MVVM Architecture
+- Google Maps API
 - Room Database
 - Firebase Firestore
 - StateFlow
 - Material Design 3
 
-## Architecture
+---
 
-Data flow is kept strict:
+# Architecture
 
-`UI -> ViewModel -> Repository -> DAO -> Room`
+The application follows a clean MVVM architecture pattern:
 
-Room is the local source of truth. Firebase Firestore is used as a remote sync layer when configuration and internet are available.
+UI → ViewModel → Repository → DAO → Room Database
 
-## Project Structure
+- Room Database acts as the local source of truth
+- Firebase Firestore is used for remote cloud synchronization
+- StateFlow is used for reactive state management
 
-```text
+---
+
+# Project Structure
+
+```plaintext
 app/src/main/java/com/grameenlight/app
-|- data/local
-|- data/model
-|- data/repository
-|- ui/screens
-|- ui/theme
-|- ui/viewmodel
+│
+├── data/local
+├── data/model
+├── data/repository
+├── ui/screens
+├── ui/theme
+└── ui/viewmodel
 ```
 
-## Open in Android Studio
+---
 
-Open this folder in Android Studio:
+# Application Workflow
 
-## Build
+1. User opens the Grameen-Light application
+2. Streetlight poles are displayed on the map
+3. User selects a pole marker
+4. User reports the issue status
+5. Complaint ID is generated automatically
+6. Marker color changes based on complaint type
+7. Panchayat users review and manage complaints
+8. Complaint status and repair history can be tracked later
 
-```powershell
-.\gradlew.bat :app:assembleDebug
-```
+---
 
-## Firebase Setup
+# Pole Status Indicators
 
-The project works offline without Firebase.
+- Green → Working
+- Red → Fused
+- Yellow → ON During Daytime
 
-To enable cloud sync:
+These color-coded markers help users quickly identify streetlight conditions.
+
+---
+
+# Firebase Setup
+
+The application can work completely offline without Firebase.
+
+To enable cloud synchronization:
 
 1. Create a Firebase project
 2. Download `google-services.json`
-3. Place it in `app/google-services.json`
-4. Rebuild the app
+3. Place the file inside:
+   `app/google-services.json`
+4. Rebuild the application
 
-## Demo Notes
 
-- Panchayat demo PIN default: `1234`
-- Android version target: API 28+
-- Offline reports save locally first and sync later when possible
-=======
-Smart streetlight monitoring and complaint reporting system for rural areas.
+---
 
-Grameen-Light is an Android application developed to help villagers report streetlight issues easily. In many rural areas, streetlights remain fused for long periods or stay ON during daytime, causing electricity wastage and safety problems. This app provides a simple platform where users can view streetlights on a map, report issues, and track complaint status.
+# Future Enhancements
 
-The application uses Google Maps for pole visualization and stores complaint data using Room Database and Firebase.
+Future improvements planned for the project include:
 
-## Features
+- IoT-based automatic streetlight fault detection
+- Smart energy monitoring system
+- Push notification alerts
+- Advanced admin dashboard
+- AI-based fault prediction
+- Real-time analytics and reporting
 
-1. View streetlight poles on map  
-2. Report streetlight issues  
-3. Generate complaint IDs  
-4. Track complaint status  
-5. Color-coded marker updates  
-6. Complaint history  
-7. Simple user interface  
+---
 
-## Technologies Used
+# Developed By
 
-1. Kotlin  
-2. Android Studio  
-3. Google Maps API  
-4. Room Database  
-5. Firebase Realtime Database  
-6. MVVM Architecture  
+Developed by Sushma Acharya as an academic and social-impact project focused on smart rural infrastructure management.
 
-## How the App Works
+---
 
-1. User opens the application  
-2. Streetlight poles are displayed on the map  
-3. User selects a pole marker  
-4. User reports the status  
-5. Complaint ID is generated  
-6. Marker color changes based on status  
-7. Complaint can be tracked later  
+# Conclusion
 
-## Pole Status Colors
-
-1. Green → Working  
-2. Red → Fused  
-3. Yellow → ON during Day  
-
-## Project Goal
-
-The main goal of this project is to reduce electricity wastage, improve road safety, and encourage community participation in maintaining rural infrastructure.
-
-## Future Improvements
-
-1. IoT-based monitoring  
-2. Admin dashboard  
-3. Push notifications  
-4. Offline support  
-5. AI-based fault detection  
-
-## Developed By
-
-Sushma Acharya
->>>>>>> df2bcbb65a05a00769adfe393f8cb522afced7ca
+Grameen-Light is a practical and innovative Android application designed to modernize rural streetlight monitoring and complaint management. By combining mobile technology, offline storage, cloud synchronization, and smart reporting features, the system improves maintenance efficiency, reduces energy wastage, and contributes toward building smarter and safer rural communities.
