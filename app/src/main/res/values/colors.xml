@@ -1,0 +1,9 @@
+<resources>
+    <color name="primary_village_green">#1B5E20</color>
+    <color name="working_green">#43A047</color>
+    <color name="fused_red">#E53935</color>
+    <color name="day_burning_amber">#FFB300</color>
+    <color name="assigned_blue">#1976D2</color>
+    <color name="light_background">#F5F7F1</color>
+    <color name="night_background">#101820</color>
+</resources>
