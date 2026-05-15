@@ -9,23 +9,23 @@ The application uses Google Maps for pole visualization and stores complaint dat
 
 ## Features
 
--> View streetlight poles on map
--> Report streetlight issues
--> Generate complaint IDs
--> Track complaint status
--> Color-coded marker updates
--> Complaint history
--> Simple user interface
+##-> View streetlight poles on map
+##-> Report streetlight issues
+##-> Generate complaint IDs
+##-> Track complaint status
+##-> Color-coded marker updates
+##-> Complaint history
+##-> Simple user interface
 
 
 ## Technologies Used
 
--> Kotlin
--> Android Studio
--> Google Maps API
--> Room Database
--> Firebase Realtime Database
--> MVVM Architecture
+##-> Kotlin
+##-> Android Studio
+##-> Google Maps API
+##-> Room Database
+##-> Firebase Realtime Database
+##-> MVVM Architecture
 
 
 ## How the App Works
@@ -41,9 +41,9 @@ The application uses Google Maps for pole visualization and stores complaint dat
 
 ## Pole Status Colors
 
--> Green → Working
--> Red → Fused
--> Yellow → ON during Day
+##-> Green → Working
+##-> Red → Fused
+##-> Yellow → ON during Day
 
 
 ## Project Goal
@@ -53,11 +53,11 @@ The main goal of this project is to reduce electricity wastage, improve road saf
 
 ## Future Improvements
 
--> IoT-based monitoring
--> Admin dashboard
--> Push notifications
--> Offline support
--> AI-based fault detection
+##-> IoT-based monitoring
+##-> Admin dashboard
+##-> Push notifications
+##-> Offline support
+##-> AI-based fault detection
 
 ## Developed By
 
